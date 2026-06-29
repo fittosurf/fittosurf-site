@@ -1,0 +1,12 @@
+{
+  "name": "fittosurf-site",
+  "version": "1.0.0",
+  "description": "FitToSurf — préparation physique pour surfeurs adultes",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
