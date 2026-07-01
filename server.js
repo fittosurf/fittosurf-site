@@ -4,6 +4,16 @@ const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// Force HTTPS in production (behind Hostinger's reverse proxy).
+// Detect the original protocol via the 'x-forwarded-proto' header set by the proxy.
+// When the header is absent (e.g. local http://localhost dev), do nothing.
+app.use((req, res, next) => {
+  if (req.headers['x-forwarded-proto'] === 'http') {
+    return res.redirect(301, 'https://' + req.headers.host + req.originalUrl);
+  }
+  next();
+});
+
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
