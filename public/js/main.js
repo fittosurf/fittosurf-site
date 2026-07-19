@@ -106,36 +106,54 @@
     revealEls.forEach((el) => el.classList.add('is-visible'));
   }
 
-  // Lead form submission
+  // Lead form submission → Brevo (via our /api/subscribe endpoint)
   const form = document.getElementById('leadForm');
   const feedback = document.getElementById('leadFeedback');
 
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    feedback.classList.remove('is-error');
-    feedback.textContent = 'Envoi en cours...';
+  if (form) {
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const btnLabel = submitBtn.querySelector('span:first-child');
+    const originalLabel = btnLabel.textContent;
 
-    const firstName = document.getElementById('firstName').value.trim();
-    const email = document.getElementById('email').value.trim();
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      feedback.classList.remove('is-error');
+      feedback.textContent = '';
+      submitBtn.disabled = true;
+      btnLabel.textContent = 'Envoi…';
 
-    try {
-      const res = await fetch('/api/lead', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ firstName, email }),
-      });
-      const data = await res.json();
+      const prenom = document.getElementById('firstName').value.trim();
+      const email = document.getElementById('email').value.trim();
 
-      if (data.ok) {
-        feedback.textContent = `Merci ${firstName} ! Ton programme arrive par email.`;
-        form.reset();
-      } else {
+      const showError = () => {
         feedback.classList.add('is-error');
-        feedback.textContent = data.error || 'Une erreur est survenue.';
+        feedback.textContent = 'Oups, une erreur. Réessaie dans un instant.';
+        submitBtn.disabled = false;
+        btnLabel.textContent = originalLabel;
+      };
+
+      try {
+        const res = await fetch('/api/subscribe', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ prenom, email }),
+        });
+        const data = await res.json().catch(() => ({}));
+
+        if (res.ok && data.ok) {
+          // Replace the form with a friendly confirmation (off-white, dark section)
+          const confirmation = document.createElement('p');
+          confirmation.className = 'programme__confirmation';
+          confirmation.setAttribute('role', 'status');
+          confirmation.textContent =
+            "C'est envoyé ! Regarde ta boîte mail, ton programme arrive.";
+          form.replaceWith(confirmation);
+        } else {
+          showError();
+        }
+      } catch (err) {
+        showError();
       }
-    } catch (err) {
-      feedback.classList.add('is-error');
-      feedback.textContent = 'Une erreur est survenue. Réessaie.';
-    }
-  });
+    });
+  }
 })();
