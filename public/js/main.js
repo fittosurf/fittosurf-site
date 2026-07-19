@@ -86,9 +86,21 @@
           }
         });
       },
-      { threshold: 0.15, rootMargin: '0px 0px -40px 0px' }
+      // No negative bottom margin: otherwise elements at the very bottom of the
+      // page (e.g. the footer copyright) can never reach the threshold and stay hidden.
+      { threshold: 0.15, rootMargin: '0px' }
     );
     revealEls.forEach((el) => observer.observe(el));
+
+    // Safety net for short elements pinned to the page bottom: once the user is
+    // near the end of the page, reveal anything still hidden.
+    const revealBottom = () => {
+      if (window.innerHeight + window.scrollY >= document.body.scrollHeight - 4) {
+        revealEls.forEach((el) => el.classList.add('is-visible'));
+        window.removeEventListener('scroll', revealBottom);
+      }
+    };
+    window.addEventListener('scroll', revealBottom, { passive: true });
   } else {
     // Safety net: if IntersectionObserver is unavailable, just show everything
     revealEls.forEach((el) => el.classList.add('is-visible'));

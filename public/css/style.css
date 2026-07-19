@@ -55,7 +55,9 @@ h1, h2, h3 {
   margin-bottom: 16px;
 }
 .eyebrow--center { display: block; text-align: center; }
-.eyebrow--light { color: var(--sand); }
+/* "règle du sable": sand fails contrast as text on light — use wood for labels.
+   (Sand stays for washes/fills and for text on dark sections.) */
+.eyebrow--light { color: var(--wood); }
 
 .section { padding: 96px 0; }
 .section__title {
@@ -241,6 +243,24 @@ h1, h2, h3 {
   transition: color 400ms var(--ease);
 }
 .nav.is-scrolled .nav__logo { color: var(--ocean); }
+/* Image logo in the floating nav pill (mobile-first: 40px, 52px from 768px up) */
+.nav__logo--img {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  line-height: 0;
+}
+.nav__logo--img img {
+  display: block;
+  height: 40px;
+  max-height: 40px;
+  width: auto;
+  /* dark-text logo sits over the dark hero photo until the pill turns light:
+     render it white (with a soft shadow) at the top, true colours once scrolled */
+  filter: brightness(0) invert(1) drop-shadow(0 1px 6px rgba(43, 39, 34, 0.45));
+  transition: filter 400ms var(--ease);
+}
+.nav.is-scrolled .nav__logo--img img { filter: none; }
 .nav__links {
   display: none;
   gap: 32px;
@@ -523,7 +543,7 @@ h1, h2, h3 {
 
 /* ---------- Luca ---------- */
 /* overflow-x clip so the left/right slide-in never creates horizontal scroll */
-.luca { background: #fff; overflow-x: clip; }
+.luca { background: var(--off-white); overflow-x: clip; }
 .luca__grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -600,7 +620,7 @@ h1, h2, h3 {
   margin-bottom: 40px;
 }
 .lead-form {
-  background: #fff;
+  background: var(--off-white);
   border: 1px solid rgba(139, 111, 71, 0.18);
   border-radius: 24px;
   padding: 28px;
@@ -660,6 +680,9 @@ h1, h2, h3 {
 
 /* ---------- Responsive ---------- */
 @media (min-width: 768px) {
+  .nav__logo--img img { height: 52px; max-height: 52px; }
+  /* trim the pill's vertical padding so the taller logo stays balanced */
+  .nav__inner { padding: 8px 18px; }
   .nav__links { display: flex; }
   .nav__cta {
     display: inline-flex;
