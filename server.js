@@ -15,6 +15,15 @@ app.use((req, res, next) => {
 });
 
 app.use(express.json());
+
+// Keep /downloads/ files publicly downloadable by direct link, but tell
+// crawlers not to index or follow them. Placed before static serving so the
+// header is applied when express.static returns the file.
+app.use('/downloads', (req, res, next) => {
+  res.set('X-Robots-Tag', 'noindex, nofollow');
+  next();
+});
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.post('/api/lead', (req, res) => {
