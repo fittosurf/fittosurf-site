@@ -141,6 +141,10 @@
         const data = await res.json().catch(() => ({}));
 
         if (res.ok && data.ok) {
+          // Conversion GA4 — uniquement si le consentement est accordé
+          if (typeof window.fittosurfTrackLead === 'function') {
+            window.fittosurfTrackLead();
+          }
           // Replace the form with a friendly confirmation (off-white, dark section)
           const confirmation = document.createElement('p');
           confirmation.className = 'programme__confirmation';

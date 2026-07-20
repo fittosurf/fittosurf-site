@@ -3,6 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Consent Mode v2 — tous les consentements REFUSÉS par défaut.
+     Doit s'exécuter avant tout autre script. Aucun cookie n'est déposé tant
+     que l'utilisateur n'a pas explicitement accepté. -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    'analytics_storage': 'denied',
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied'
+  });
+</script>
+
 <title>FitToSurf — Préparation physique surf pour adultes | Coach sportif Seignosse, Landes</title>
 <meta name="description" content="Préparation physique surf pour adultes qui veulent surfer plus de vagues et enchaîner les sessions, par un préparateur physique, lui-même surfeur, basé à Seignosse, Landes.">
 <meta name="keywords" content="préparation physique surf, préparation physique surf adulte, surfer après 30 ans, renforcement musculaire surfeur, mobilité surf, endurance surf, coach sportif surf Landes, surf Seignosse">
@@ -228,6 +243,7 @@
       <a href="#methode">La méthode</a>
       <a href="#programme">Programme gratuit</a>
       <a href="/mentions-legales">Mentions légales</a>
+      <button type="button" class="footer__link-btn" id="manageCookies">Gérer les cookies</button>
     </nav>
   </div>
   <div class="container footer__bottom">
@@ -235,6 +251,21 @@
   </div>
 </footer>
 
+<!-- Bannière de consentement cookies (RGPD / CNIL) -->
+<div class="consent" id="consentBanner" role="dialog" aria-live="polite" aria-label="Consentement aux cookies de mesure d'audience" hidden>
+  <div class="consent__inner">
+    <p class="consent__text">
+      On utilise des cookies de mesure d'audience pour comprendre comment le site est utilisé. Tu peux refuser, ça ne change rien à ta navigation.
+      <a href="/mentions-legales" class="consent__more">En savoir plus</a>
+    </p>
+    <div class="consent__actions">
+      <button type="button" class="consent__btn consent__btn--refuse" id="consentRefuse">Refuser</button>
+      <button type="button" class="consent__btn consent__btn--accept" id="consentAccept">Accepter</button>
+    </div>
+  </div>
+</div>
+
+<script src="/js/consent.js" defer></script>
 <script src="/js/main.js"></script>
 </body>
 </html>

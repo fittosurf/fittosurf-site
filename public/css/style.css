@@ -704,6 +704,92 @@ h1, h2, h3 {
 .footer__links a:hover { color: var(--sand); }
 .footer__bottom { padding-top: 20px; }
 .footer__bottom p { font-size: 13px; margin: 0; }
+/* "Gérer les cookies" — bouton stylé comme un lien de footer */
+.footer__link-btn {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: inherit;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: color 300ms;
+}
+.footer__link-btn:hover { color: var(--sand); }
+
+/* ---------- Bannière de consentement cookies (RGPD / CNIL) ---------- */
+.consent {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 200;
+  background: var(--off-white);
+  border-top: 1px solid var(--sand);
+  box-shadow: 0 -6px 24px rgba(43, 39, 34, 0.1);
+  color: var(--ink);
+  transform: translateY(100%);
+  opacity: 0;
+  transition: transform 0.4s var(--ease), opacity 0.4s var(--ease);
+}
+.consent.is-visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+.consent__inner {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.consent__text {
+  margin: 0;
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--ink);
+}
+.consent__more {
+  color: var(--ocean);
+  text-decoration: underline;
+  white-space: nowrap;
+}
+.consent__actions {
+  display: flex;
+  gap: 12px;
+  flex-shrink: 0;
+}
+/* Deux boutons identiques (taille, typo, forme) — exigence CNIL */
+.consent__btn {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 700;
+  padding: 12px 24px;
+  border-radius: 999px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: transform 200ms var(--ease), background 300ms var(--ease);
+}
+.consent__btn:active { transform: scale(0.98); }
+.consent__btn--refuse {
+  background: #fff;
+  border-color: var(--wood);
+  color: var(--ink);
+}
+.consent__btn--accept {
+  background: var(--ocean);
+  color: var(--off-white);
+}
+@media (max-width: 767px) {
+  .consent__inner { flex-direction: column; align-items: stretch; gap: 16px; }
+  .consent__actions { flex-direction: column; width: 100%; }
+  .consent__btn { width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .consent { transition: none; }
+}
 
 /* ---------- Responsive ---------- */
 /* Smaller logo on phones */
