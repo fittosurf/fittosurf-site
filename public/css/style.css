@@ -783,9 +783,16 @@ h1, h2, h3 {
   color: var(--off-white);
 }
 @media (max-width: 767px) {
-  .consent__inner { flex-direction: column; align-items: stretch; gap: 16px; }
-  .consent__actions { flex-direction: column; width: 100%; }
-  .consent__btn { width: 100%; }
+  .consent__inner {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+    padding: 12px 16px;
+  }
+  .consent__text { font-size: 14px; line-height: 1.4; }
+  /* Boutons côte à côte, 50/50, poids visuel identique (exigence CNIL) */
+  .consent__actions { width: 100%; gap: 10px; }
+  .consent__btn { flex: 1 1 0; padding: 9px 12px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .consent { transition: none; }
