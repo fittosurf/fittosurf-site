@@ -104,47 +104,6 @@ app.post('/api/subscribe', async (req, res) => {
   }
 });
 
-// TEMPORAIRE — route de diagnostic Brevo. À supprimer une fois le débogage fini.
-// Ne renvoie jamais la clé complète : au maximum ses 8 premiers caractères.
-app.get('/api/health-brevo', async (req, res) => {
-  const apiKey = process.env.BREVO_API_KEY || '';
-  const listId = process.env.BREVO_LIST_ID || '';
-
-  const diag = {
-    apiKeyDefined: apiKey.length > 0,
-    apiKeyLength: apiKey.length,
-    apiKeyPrefix: apiKey.slice(0, 8), // 8 premiers caractères max
-    apiKeyHasWhitespace: /\s/.test(apiKey),
-    listIdDefined: listId.length > 0,
-    listIdValue: listId, // ce n'est pas un secret
-    listIdIsNumeric: listId.trim() !== '' && !Number.isNaN(Number(listId)),
-  };
-
-  try {
-    const acctRes = await fetch('https://api.brevo.com/v3/account', {
-      method: 'GET',
-      headers: { 'api-key': apiKey, accept: 'application/json' },
-    });
-    diag.brevoAccountStatus = acctRes.status;
-    if (acctRes.ok) {
-      // succès : ne pas exposer les données du compte
-      diag.brevoAccountBody = 'OK';
-    } else {
-      const raw = await acctRes.text();
-      try {
-        diag.brevoAccountBody = JSON.parse(raw);
-      } catch (_) {
-        diag.brevoAccountBody = raw;
-      }
-    }
-  } catch (err) {
-    diag.brevoAccountStatus = null;
-    diag.brevoAccountBody = 'Request failed: ' + err.message;
-  }
-
-  res.json(diag);
-});
-
 app.get('/mentions-legales', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'mentions-legales.html'));
 });
