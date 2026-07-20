@@ -74,15 +74,29 @@ app.post('/api/subscribe', async (req, res) => {
       return res.json({ ok: true });
     }
 
+    // Read the response body once: try JSON, fall back to raw text.
+    const rawBody = await brevoRes.text();
+    let payload = null;
+    try {
+      payload = JSON.parse(rawBody);
+    } catch (_) {
+      /* not JSON — keep rawBody for logging */
+    }
+
     // Contact already exists: with updateEnabled this is a success from the
     // user's point of view; never surface an error for re-subscribing.
-    const payload = await brevoRes.json().catch(() => ({}));
     if (brevoRes.status === 400 && payload && payload.code === 'duplicate_parameter') {
       return res.json({ ok: true });
     }
 
-    // Any other status is an unexpected failure — log server-side only.
-    console.error('[subscribe] Brevo error', brevoRes.status, payload);
+    // Any other status is an unexpected failure — log status + body server-side
+    // only (never the API key). The client still gets a generic message.
+    console.error(
+      '[subscribe] Brevo error — status:',
+      brevoRes.status,
+      '— body:',
+      payload !== null ? payload : rawBody
+    );
     return res.status(500).json({ ok: false, error: 'Une erreur est survenue. Réessaie.' });
   } catch (err) {
     console.error('[subscribe] Request failed', err);
@@ -100,4 +114,12 @@ app.use((req, res) => {
 
 app.listen(PORT, () => {
   console.log(`FitToSurf running at http://localhost:${PORT}`);
+  // Startup diagnostics — booleans only, never the key value itself.
+  console.log(
+    '[env] BREVO_API_KEY defined:',
+    Boolean(process.env.BREVO_API_KEY),
+    '(length:',
+    (process.env.BREVO_API_KEY || '').length + ')'
+  );
+  console.log('[env] BREVO_LIST_ID defined:', Boolean(process.env.BREVO_LIST_ID));
 });
