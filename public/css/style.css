@@ -782,6 +782,11 @@ h1, h2, h3 {
   background: var(--ocean);
   color: var(--off-white);
 }
+/* Desktop : une seule ligne, texte à gauche, boutons alignés à droite, ~72px */
+@media (min-width: 768px) {
+  .consent__inner { padding: 14px 24px; }
+  .consent__text { flex: 1; } /* pousse les boutons vers le bord droit */
+}
 @media (max-width: 767px) {
   .consent__inner {
     flex-direction: column;
