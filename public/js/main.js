@@ -1,25 +1,29 @@
 (function () {
-  // Nav scroll state
+  // Nav scroll state (absent sur certaines pages, ex. mentions légales)
   const nav = document.getElementById('nav');
-  const onScroll = () => {
-    nav.classList.toggle('is-scrolled', window.scrollY > 24);
-  };
-  onScroll();
-  window.addEventListener('scroll', onScroll, { passive: true });
+  if (nav) {
+    const onScroll = () => {
+      nav.classList.toggle('is-scrolled', window.scrollY > 24);
+    };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+  }
 
   // Mobile menu
   const burger = document.getElementById('navBurger');
   const mobileMenu = document.getElementById('navMobile');
-  burger.addEventListener('click', () => {
-    burger.classList.toggle('is-open');
-    mobileMenu.classList.toggle('is-open');
-  });
-  mobileMenu.querySelectorAll('a').forEach((link) => {
-    link.addEventListener('click', () => {
-      burger.classList.remove('is-open');
-      mobileMenu.classList.remove('is-open');
+  if (burger && mobileMenu) {
+    burger.addEventListener('click', () => {
+      burger.classList.toggle('is-open');
+      mobileMenu.classList.toggle('is-open');
     });
-  });
+    mobileMenu.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        burger.classList.remove('is-open');
+        mobileMenu.classList.remove('is-open');
+      });
+    });
+  }
 
   const prefersReduced = window.matchMedia(
     '(prefers-reduced-motion: reduce)'

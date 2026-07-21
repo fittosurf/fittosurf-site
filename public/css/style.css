@@ -704,10 +704,23 @@ h1, h2, h3 {
 .footer__links {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   gap: 20px;
 }
 .footer__links a { font-size: 14px; transition: color 300ms; }
 .footer__links a:hover { color: var(--sand); }
+/* Lien Instagram — icône SVG inline, Bois → Océan au survol, cible tactile 44x44 */
+.footer__social {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
+  color: var(--wood);
+  transition: color 300ms var(--ease);
+}
+.footer__links .footer__social:hover { color: var(--ocean); }
+.footer__social svg { width: 22px; height: 22px; display: block; }
 .footer__bottom { padding-top: 20px; }
 .footer__bottom p { font-size: 13px; margin: 0; }
 /* "Gérer les cookies" — bouton stylé comme un lien de footer */

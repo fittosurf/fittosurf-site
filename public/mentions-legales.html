@@ -3,11 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Consent Mode v2 — tous les consentements REFUSÉS par défaut. -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    'analytics_storage': 'denied',
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied'
+  });
+</script>
+
 <title>Mentions légales — FitToSurf</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Lato:wght@300;400&display=swap" rel="stylesheet">
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+<link rel="icon" type="image/png" href="/images/favicon.png">
+<link rel="apple-touch-icon" href="/images/favicon.png">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/style.css">
 <style>
-  .legal { padding: 160px 0 96px; max-width: 720px; }
+  .legal { padding: 120px 0 96px; max-width: 720px; }
   .legal h1 { font-size: 32px; margin-bottom: 24px; }
   .legal p { color: var(--ink-soft); margin-bottom: 16px; }
   .legal a { color: var(--ocean); font-weight: 700; }
@@ -19,5 +36,49 @@
     <p>Cette page sera complétée avec les informations légales de FitToSurf (éditeur, hébergeur, SIRET, etc.).</p>
     <p><a href="/">← Retour à l'accueil</a></p>
   </div>
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__brand">
+      <a href="/" class="nav__logo">FitToSurf</a>
+      <p>Préparation physique surf pour adultes — Seignosse, Landes</p>
+    </div>
+    <nav class="footer__links">
+      <a href="/">Accueil</a>
+      <a href="/#methode">La méthode</a>
+      <a href="/blog">Blog</a>
+      <a href="/#programme">Programme gratuit</a>
+      <a href="/mentions-legales">Mentions légales</a>
+      <button type="button" class="footer__link-btn" id="manageCookies">Gérer les cookies</button>
+      <a href="https://instagram.com/fittosurf.fr" class="footer__social" target="_blank" rel="noopener noreferrer" aria-label="FitToSurf sur Instagram" title="FitToSurf sur Instagram">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="2" y="2" width="20" height="20" rx="5.5"></rect>
+          <circle cx="12" cy="12" r="4.2"></circle>
+          <circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"></circle>
+        </svg>
+      </a>
+    </nav>
+  </div>
+  <div class="container footer__bottom">
+    <p>© 2026 FitToSurf — Luca Fasulo, préparateur physique — 40230 Tosse</p>
+  </div>
+</footer>
+
+<!-- Bannière de consentement cookies (RGPD / CNIL) -->
+<div class="consent" id="consentBanner" role="dialog" aria-live="polite" aria-label="Consentement aux cookies de mesure d'audience" hidden>
+  <div class="consent__inner">
+    <p class="consent__text">
+      Cookies de mesure d'audience. Tu peux refuser, ça ne change rien.
+      <a href="/mentions-legales" class="consent__more">En savoir plus</a>
+    </p>
+    <div class="consent__actions">
+      <button type="button" class="consent__btn consent__btn--refuse" id="consentRefuse">Refuser</button>
+      <button type="button" class="consent__btn consent__btn--accept" id="consentAccept">Accepter</button>
+    </div>
+  </div>
+</div>
+
+<script src="/js/consent.js" defer></script>
+<script src="/js/main.js"></script>
 </body>
 </html>
