@@ -231,7 +231,8 @@ h1, h2, h3 {
   padding: 10px 18px;
   transition: background 400ms var(--ease), box-shadow 400ms var(--ease);
 }
-.nav.is-scrolled .nav__inner {
+.nav.is-scrolled .nav__inner,
+.nav--solid .nav__inner {
   background: rgba(248, 245, 240, 0.85);
   backdrop-filter: blur(14px);
   box-shadow: 0 4px 24px rgba(43, 39, 34, 0.08);
@@ -243,7 +244,8 @@ h1, h2, h3 {
   color: var(--off-white);
   transition: color 400ms var(--ease);
 }
-.nav.is-scrolled .nav__logo { color: var(--ocean); }
+.nav.is-scrolled .nav__logo,
+.nav--solid .nav__logo { color: var(--ocean); }
 /* Image logo in the floating nav pill (mobile-first: 40px, 52px from 768px up) */
 /* Parent link must not stretch to the image's natural size */
 .nav__logo--img {
@@ -264,7 +266,8 @@ h1, h2, h3 {
   filter: brightness(0) invert(1) drop-shadow(0 1px 6px rgba(43, 39, 34, 0.45));
   transition: filter 400ms var(--ease);
 }
-.nav.is-scrolled .nav-logo { filter: none; }
+.nav.is-scrolled .nav-logo,
+.nav--solid .nav-logo { filter: none; }
 .nav__links {
   display: none;
   gap: 32px;
@@ -276,7 +279,8 @@ h1, h2, h3 {
   transition: color 400ms var(--ease), opacity 300ms;
   opacity: 0.9;
 }
-.nav.is-scrolled .nav__links a { color: var(--ink); }
+.nav.is-scrolled .nav__links a,
+.nav--solid .nav__links a { color: var(--ink); }
 .nav__links a:hover { opacity: 1; color: var(--ocean); }
 .nav__cta { display: none; }
 .nav__burger {
@@ -291,7 +295,8 @@ h1, h2, h3 {
   gap: 5px;
   cursor: pointer;
 }
-.nav.is-scrolled .nav__burger { background: rgba(43,39,34,0.06); }
+.nav.is-scrolled .nav__burger,
+.nav--solid .nav__burger { background: rgba(43,39,34,0.06); }
 .nav__burger span {
   display: block;
   width: 16px; height: 2px;
@@ -299,7 +304,8 @@ h1, h2, h3 {
   border-radius: 2px;
   transition: transform 400ms var(--ease), opacity 300ms, background 300ms;
 }
-.nav.is-scrolled .nav__burger span { background: var(--ink); }
+.nav.is-scrolled .nav__burger span,
+.nav--solid .nav__burger span { background: var(--ink); }
 .nav__burger.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
 .nav__burger.is-open span:nth-child(2) { opacity: 0; }
 .nav__burger.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
@@ -801,6 +807,93 @@ h1, h2, h3 {
 }
 @media (prefers-reduced-motion: reduce) {
   .consent { transition: none; }
+}
+
+/* ---------- Article de blog ---------- */
+.article {
+  padding: 128px 0 88px; /* dégage la nav fixe */
+  background: var(--off-white);
+}
+.article__container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.article__eyebrow {
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--wood);
+  margin: 0 0 16px;
+}
+.article__title {
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: clamp(30px, 5vw, 46px);
+  line-height: 1.15;
+  color: var(--ink);
+  margin: 0 0 18px;
+}
+.article__meta {
+  font-size: 14px;
+  color: var(--ink-soft);
+  margin: 0 0 32px;
+}
+/* Image d'en-tête pleine largeur, ratio fixe pour éviter tout décalage (CLS) */
+.article__cover {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 16px;
+  margin: 0 0 44px;
+}
+.article__body { color: var(--ink); font-size: 18px; line-height: 1.75; }
+.article__body p { margin: 0 0 22px; }
+.article__body h2 {
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: clamp(24px, 3.5vw, 32px);
+  line-height: 1.25;
+  color: var(--ink);
+  margin: 48px 0 18px;
+}
+.article__body h3 {
+  font-family: var(--font-head);
+  font-weight: 600;
+  font-size: 21px;
+  color: var(--wood);
+  margin: 32px 0 12px;
+}
+.article__body strong { font-weight: 700; }
+.article__body a { color: var(--ocean); text-decoration: underline; }
+.article__body hr {
+  border: none;
+  border-top: 1px solid rgba(139, 111, 71, 0.2);
+  margin: 44px 0;
+}
+/* Schéma inséré dans le corps, pleine largeur du texte + légende discrète */
+.article__figure { margin: 34px 0; }
+.article__figure img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+}
+.article__figcaption {
+  margin-top: 10px;
+  font-size: 13px;
+  color: var(--ink-soft);
+  text-align: center;
+  font-style: italic;
+}
+.article__cta-wrap { margin: 8px 0 4px; }
+.article__signature {
+  font-style: italic;
+  color: var(--ink-soft);
+  font-size: 15px;
 }
 
 /* ---------- Responsive ---------- */

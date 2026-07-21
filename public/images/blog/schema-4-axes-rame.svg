@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 580" width="1200" height="580" role="img" aria-labelledby="titre desc">
+  <title id="titre">Les quatre axes de la préparation à la rame, dans l'ordre</title>
+  <desc id="desc">Mobilité, force, endurance de force, puis efforts répétés. Chercher l'endurance avant la mobilité et la force revient à empiler des répétitions sur un geste inefficace, et expose à la blessure.</desc>
+
+  <defs>
+    <linearGradient id="ocean" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2E7FA0"/>
+      <stop offset="100%" stop-color="#1E6B8C"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="580" fill="#F8F5F0"/>
+
+  <text x="80" y="70" font-family="Lato, Helvetica, Arial, sans-serif" font-size="15" font-weight="700"
+        letter-spacing="3" fill="#8B6F47">LA PROGRESSION</text>
+
+  <text x="80" y="120" font-family="Georgia, 'Playfair Display', serif" font-size="38" font-weight="700" fill="#2B2722">
+    Quatre axes, dans cet ordre
+  </text>
+
+  <!-- axe -->
+  <line x1="100" y1="470" x2="1100" y2="470" stroke="#D4B896" stroke-width="3" stroke-linecap="round" opacity="0.75"/>
+  <polygon points="1118,470 1098,461 1098,479" fill="#1E6B8C"/>
+
+  <!-- 1 — MOBILITÉ -->
+  <g>
+    <rect x="80" y="350" width="230" height="90" rx="4" fill="#FFFFFF" stroke="#E3DDD3"/>
+    <rect x="80" y="350" width="230" height="4" rx="2" fill="#D4B896"/>
+    <line x1="110" y1="440" x2="110" y2="461" stroke="#D4B896" stroke-width="2"/>
+    <circle cx="110" cy="470" r="9" fill="#D4B896"/>
+    <text x="104" y="391" font-family="Georgia, serif" font-size="28" font-weight="700" fill="#D4B896">1</text>
+    <text x="133" y="391" font-family="Lato, Helvetica, Arial, sans-serif" font-size="20" font-weight="700"
+          letter-spacing="0.5" fill="#2B2722">MOBILITÉ</text>
+    <text x="104" y="418" font-family="Lato, Helvetica, Arial, sans-serif" font-size="15" fill="#5C574F">Un geste plus fluide,</text>
+    <text x="104" y="436" font-family="Lato, Helvetica, Arial, sans-serif" font-size="15" fill="#5C574F">moins de crispation</text>
+    <text x="104" y="503" font-family="Lato, Helvetica, Arial, sans-serif" font-size="13.5" font-style="italic" fill="#8B6F47">› dès la 1re session</text>
+  </g>
+
+  <!-- 2 — FORCE -->
+  <g>
+    <rect x="350" y="320" width="230" height="120" rx="4" fill="#FFFFFF" stroke="#E3DDD3"/>
+    <rect x="350" y="320" width="230" height="4" rx="2" fill="#B99A6B"/>
+    <line x1="380" y1="440" x2="380" y2="461" stroke="#B99A6B" stroke-width="2"/>
+    <circle cx="380" cy="470" r="9" fill="#B99A6B"/>
+    <text x="374" y="361" font-family="Georgia, serif" font-size="28" font-weight="700" fill="#B99A6B">2</text>
+    <text x="403" y="361" font-family="Lato, Helvetica, Arial, sans-serif" font-size="20" font-weight="700"
+          letter-spacing="0.5" fill="#2B2722">FORCE</text>
+    <text x="374" y="392" font-family="Lato, Helvetica, Arial, sans-serif" font-size="15" fill="#5C574F">Chaque coup de rame</text>
+    <text x="374" y="410" font-family="Lato, Helvetica, Arial, sans-serif" font-size="15" fill="#5C574F">est plus efficace</text>
+    <text x="374" y="503" font-family="Lato, Helvetica, Arial, sans-serif" font-size="13.5" font-style="italic" fill="#8B6F47">› 6 à 8 semaines</text>
+  </g>
+
+  <!-- 3 — ENDURANCE DE FORCE -->
+  <g>
+    <rect x="620" y="290" width="230" height="150" rx="4" fill="#FFFFFF" stroke="#E3DDD3"/>
+    <rect x="620" y="290" width="230" height="4" rx="2" fill="#8B6F47"/>
+    <line x1="650" y1="440" x2="650" y2="461" stroke="#8B6F47" stroke-width="2"/>
+    <circle cx="650" cy="470" r="9" fill="#8B6F47"/>
+    <text x="644" y="331" font-family="Georgia, serif" font-size="28" font-weight="700" fill="#8B6F47">3</text>
+    <text x="673" y="331" font-family="Lato, Helvetica, Arial, sans-serif" font-size="20" font-weight="700"
+          letter-spacing="0.5" fill="#2B2722">ENDURANCE</text>
+    <text x="673" y="354" font-family="Lato, Helvetica, Arial, sans-serif" font-size="20" font-weight="700"
+          letter-spacing="0.5" fill="#2B2722">DE FORCE</text>
+    <text x="644" y="386" font-family="Lato, Helvetica, Arial, sans-serif" font-size="15" fill="#5C574F">Tenir la durée sans</text>
+    <text x="644" y="404" font-family="Lato, Helvetica, Arial, sans-serif" font-size="15" fill="#5C574F">perdre en efficacité</text>
+    <text x="644" y="503" font-family="Lato, Helvetica, Arial, sans-serif" font-size="13.5" font-style="italic" fill="#8B6F47">› l'étape que tout le</text>
+    <text x="644" y="521" font-family="Lato, Helvetica, Arial, sans-serif" font-size="13.5" font-style="italic" fill="#8B6F47">   monde saute</text>
+  </g>
+
+  <!-- 4 — EFFORTS RÉPÉTÉS -->
+  <g>
+    <rect x="890" y="260" width="230" height="180" rx="4" fill="url(#ocean)"/>
+    <line x1="920" y1="440" x2="920" y2="461" stroke="#1E6B8C" stroke-width="2"/>
+    <circle cx="920" cy="470" r="9" fill="#1E6B8C"/>
+    <text x="914" y="301" font-family="Georgia, serif" font-size="28" font-weight="700" fill="#D4B896">4</text>
+    <text x="943" y="301" font-family="Lato, Helvetica, Arial, sans-serif" font-size="20" font-weight="700"
+          letter-spacing="0.5" fill="#FFFFFF">EFFORTS</text>
+    <text x="943" y="324" font-family="Lato, Helvetica, Arial, sans-serif" font-size="20" font-weight="700"
+          letter-spacing="0.5" fill="#FFFFFF">RÉPÉTÉS</text>
+    <text x="914" y="356" font-family="Lato, Helvetica, Arial, sans-serif" font-size="15" fill="#E7F0F4">Repartir sans être</text>
+    <text x="914" y="374" font-family="Lato, Helvetica, Arial, sans-serif" font-size="15" fill="#E7F0F4">totalement frais</text>
+    <text x="914" y="503" font-family="Lato, Helvetica, Arial, sans-serif" font-size="13.5" font-style="italic" fill="#8B6F47">› le profil réel d'un</text>
+    <text x="914" y="521" font-family="Lato, Helvetica, Arial, sans-serif" font-size="13.5" font-style="italic" fill="#8B6F47">   enchaînement de séries</text>
+  </g>
+
+  <text x="80" y="565" font-family="Lato, Helvetica, Arial, sans-serif" font-size="14" fill="#8B6F47">
+    Chercher l'endurance avant la mobilité et la force, c'est empiler des répétitions sur un geste inefficace — et risquer la blessure.
+  </text>
+
+  <text x="1120" y="565" text-anchor="end" font-family="Lato, Helvetica, Arial, sans-serif" font-size="13"
+        font-weight="700" letter-spacing="2" fill="#D4B896">FITTOSURF</text>
+</svg>
