@@ -868,8 +868,11 @@ h1, h2, h3 {
   margin: 32px 0 12px;
 }
 .article__body strong { font-weight: 700; }
-/* Liens dans le corps de l'article — mais PAS les boutons (.btn garde ses couleurs) */
-.article__body a:not(.btn) { color: var(--ocean); text-decoration: underline; }
+/* Liens normaux dans le corps de l'article */
+.article__body a { color: var(--ocean); text-decoration: underline; }
+/* Le bouton CTA garde toujours son texte blanc, quelle que soit la couleur des
+   liens du corps — règle plus spécifique (0,2,1), sans !important. */
+.article__body a.btn--primary { color: var(--off-white); text-decoration: none; }
 .article__body hr {
   border: none;
   border-top: 1px solid rgba(139, 111, 71, 0.2);
