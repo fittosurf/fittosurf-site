@@ -33,6 +33,11 @@ app.use('/downloads', (req, res, next) => {
   next();
 });
 
+// Clean URL for the blog index (before static, which would redirect to /blog/).
+app.get('/blog', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'blog', 'index.html'));
+});
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Subscribe a lead to the Brevo (Sendinblue) contact list.
