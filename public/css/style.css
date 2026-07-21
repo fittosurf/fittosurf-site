@@ -868,7 +868,8 @@ h1, h2, h3 {
   margin: 32px 0 12px;
 }
 .article__body strong { font-weight: 700; }
-.article__body a { color: var(--ocean); text-decoration: underline; }
+/* Liens dans le corps de l'article — mais PAS les boutons (.btn garde ses couleurs) */
+.article__body a:not(.btn) { color: var(--ocean); text-decoration: underline; }
 .article__body hr {
   border: none;
   border-top: 1px solid rgba(139, 111, 71, 0.2);
