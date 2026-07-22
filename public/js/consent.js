@@ -115,11 +115,19 @@
 
   var acceptBtn = document.getElementById('consentAccept');
   var refuseBtn = document.getElementById('consentRefuse');
-  var manageBtn = document.getElementById('manageCookies');
 
   if (acceptBtn) acceptBtn.addEventListener('click', onAccept);
   if (refuseBtn) refuseBtn.addEventListener('click', onRefuse);
-  if (manageBtn) manageBtn.addEventListener('click', showBanner);
+  // Un seul handler (showBanner) pour tous les déclencheurs « Gérer les cookies » :
+  // le bouton du footer (#manageCookies) et tout élément [data-manage-cookies].
+  document
+    .querySelectorAll('#manageCookies, [data-manage-cookies]')
+    .forEach(function (el) {
+      el.addEventListener('click', function (e) {
+        e.preventDefault();
+        showBanner();
+      });
+    });
 
   // Événement de conversion, appelé par le formulaire (main.js).
   // N'envoie rien si le consentement n'a pas été accordé (GA non chargé).

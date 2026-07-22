@@ -17,24 +17,80 @@
 </script>
 
 <title>Mentions légales — FitToSurf</title>
+<meta name="description" content="Mentions légales du site fittosurf.fr : éditeur, hébergement, propriété intellectuelle, données personnelles et cookies.">
 <meta name="robots" content="noindex">
 <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
 <link rel="icon" type="image/png" href="/images/favicon.png">
 <link rel="apple-touch-icon" href="/images/favicon.png">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/style.css">
 <style>
   .legal { padding: 120px 0 96px; max-width: 720px; }
-  .legal h1 { font-size: 32px; margin-bottom: 24px; }
-  .legal p { color: var(--ink-soft); margin-bottom: 16px; }
+  .legal h1 { font-family: var(--font-head); font-size: clamp(30px, 5vw, 42px); color: var(--ink); margin-bottom: 12px; }
+  .legal__lead { color: var(--ink-soft); font-size: 18px; margin-bottom: 40px; }
+  .legal h2 {
+    font-family: var(--font-head);
+    font-weight: 600;
+    font-size: 22px;
+    color: var(--wood);
+    margin: 36px 0 12px;
+  }
+  .legal p { color: var(--ink-soft); font-size: 16px; line-height: 1.7; margin-bottom: 16px; }
   .legal a { color: var(--ocean); font-weight: 700; }
+  .legal__update { margin-top: 40px; font-size: 14px; color: var(--ink-soft); font-style: italic; }
+  .legal__back { margin-top: 24px; }
+  /* Déclencheur « Gérer les cookies » dans le texte — même mécanisme que le footer */
+  .legal__cookies-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    color: var(--ocean);
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: underline;
+  }
 </style>
 </head>
 <body>
   <div class="container legal">
     <h1>Mentions légales</h1>
-    <p>Cette page sera complétée avec les informations légales de FitToSurf (éditeur, hébergeur, SIRET, etc.).</p>
-    <p><a href="/">← Retour à l'accueil</a></p>
+    <p class="legal__lead">Informations légales relatives au site fittosurf.fr.</p>
+
+    <h2>Éditeur du site</h2>
+    <p>
+      Le site fittosurf.fr est édité par :<br>
+      Luca Fasulo, entrepreneur individuel (micro-entreprise)<br>
+      Préparateur physique<br>
+      23 chemin de Labruquère, 40230 Tosse, France<br>
+      SIRET : 851 591 560 00012 — SIREN : 851 591 560<br>
+      E-mail : <a href="mailto:contact@fittosurf.fr">contact@fittosurf.fr</a><br>
+      TVA non applicable, article 293 B du Code général des impôts.<br>
+      Directeur de la publication : Luca Fasulo.
+    </p>
+
+    <h2>Hébergement</h2>
+    <p>
+      Le site est hébergé par :<br>
+      Hostinger International Ltd.<br>
+      61 Lordou Vironos Street, 6023 Larnaca, Chypre<br>
+      Site : <a href="https://www.hostinger.fr" target="_blank" rel="noopener noreferrer">hostinger.fr</a>
+    </p>
+
+    <h2>Propriété intellectuelle</h2>
+    <p>L'ensemble des contenus présents sur fittosurf.fr — textes, articles, programmes, photographies, logo, éléments graphiques et vidéos — est la propriété exclusive de Luca Fasulo, sauf mention contraire, et est protégé par le droit de la propriété intellectuelle. Toute reproduction, représentation, modification ou exploitation, totale ou partielle, sans autorisation écrite préalable, est interdite.</p>
+
+    <h2>Données personnelles</h2>
+    <p>Les informations transmises via le formulaire du site (prénom, adresse e-mail) sont collectées avec votre consentement, dans le seul but de vous envoyer le programme demandé et des contenus liés à la préparation physique surf. Elles sont traitées via Brevo (Sendinblue SAS) et ne sont ni vendues ni cédées à des tiers. Conformément au RGPD et à la loi Informatique et Libertés, vous disposez d'un droit d'accès, de rectification, d'effacement et d'opposition sur vos données. Chaque e-mail contient un lien de désinscription en un clic. Pour toute demande : <a href="mailto:contact@fittosurf.fr">contact@fittosurf.fr</a>.</p>
+
+    <h2>Cookies</h2>
+    <p>Le site utilise des cookies de mesure d'audience (Google Analytics), déposés uniquement après votre consentement via la bannière prévue à cet effet. Vous pouvez modifier votre choix à tout moment via le lien <button type="button" class="legal__cookies-btn" data-manage-cookies>Gérer les cookies</button> en pied de page.</p>
+
+    <h2>Responsabilité</h2>
+    <p>Les contenus, programmes et conseils proposés sur fittosurf.fr le sont à titre informatif et ne remplacent pas un avis médical. Avant de débuter toute nouvelle activité physique, notamment en cas de blessure ou de condition médicale préexistante, consultez un professionnel de santé.</p>
+
+    <p class="legal__update">Dernière mise à jour : 22 juillet 2026.</p>
+    <p class="legal__back"><a href="/">← Retour à l'accueil</a></p>
   </div>
 
 <footer class="footer">
