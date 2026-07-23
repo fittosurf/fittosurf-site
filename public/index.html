@@ -37,9 +37,13 @@
 <link rel="icon" type="image/png" href="/images/favicon.png">
 <link rel="apple-touch-icon" href="/images/favicon.png">
 
+<link rel="preload" as="image" href="/images/Hero2.webp" fetchpriority="high" type="image/webp">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Lato:wght@300;400;700;900&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet"></noscript>
 
 <link rel="stylesheet" href="/css/style.css">
 </head>
@@ -48,7 +52,7 @@
 <header class="nav" id="nav">
   <div class="nav__inner">
     <a href="#hero" class="nav__logo nav__logo--img">
-      <img class="nav-logo" src="/images/logo.png" alt="FitToSurf — préparation physique surf">
+      <img class="nav-logo" src="/images/logo.png" width="400" height="400" decoding="async" alt="FitToSurf — préparation physique surf">
     </a>
     <nav class="nav__links">
       <a href="#hero">Accueil</a>
@@ -76,7 +80,10 @@
   <!-- HERO -->
   <section class="hero" id="hero">
     <div class="hero__bg">
-      <img src="/images/Hero2.jpg" alt="Luca en action sur une vague" loading="eager">
+      <picture>
+        <source srcset="/images/Hero2.webp" type="image/webp">
+        <img src="/images/Hero2.jpg" width="2200" height="1467" alt="Luca en action sur une vague" loading="eager" fetchpriority="high" decoding="async">
+      </picture>
       <div class="hero__overlay"></div>
     </div>
     <div class="hero__content">
@@ -151,7 +158,10 @@
       <div class="pillars">
         <div class="pillar reveal">
           <div class="pillar__media">
-            <img class="pillar__img pillar__img--mobilite" src="/images/mobilite.jpg" alt="Travail de mobilité et étirement en extérieur, lumière naturelle">
+            <picture>
+              <source srcset="/images/mobilite.webp" type="image/webp">
+              <img class="pillar__img pillar__img--mobilite" src="/images/mobilite.jpg" width="1400" height="933" loading="lazy" decoding="async" alt="Travail de mobilité et étirement en extérieur, lumière naturelle">
+            </picture>
             <span class="pillar__grade"></span>
           </div>
           <span class="pillar__num">01</span>
@@ -160,7 +170,10 @@
         </div>
         <div class="pillar reveal">
           <div class="pillar__media">
-            <img class="pillar__img pillar__img--cardio" src="/images/cardio.jpg" alt="Nage et endurance dans l'océan, rayons de lumière sous l'eau">
+            <picture>
+              <source srcset="/images/cardio.webp" type="image/webp">
+              <img class="pillar__img pillar__img--cardio" src="/images/cardio.jpg" width="1400" height="934" loading="lazy" decoding="async" alt="Nage et endurance dans l'océan, rayons de lumière sous l'eau">
+            </picture>
             <span class="pillar__grade"></span>
           </div>
           <span class="pillar__num">02</span>
@@ -169,7 +182,10 @@
         </div>
         <div class="pillar reveal">
           <div class="pillar__media">
-            <img class="pillar__img pillar__img--renforcement" src="/images/renforcement.jpg" alt="Renforcement fonctionnel au poids du corps en extérieur, au bord de l'eau">
+            <picture>
+              <source srcset="/images/renforcement.webp" type="image/webp">
+              <img class="pillar__img pillar__img--renforcement" src="/images/renforcement.jpg" width="1400" height="1386" loading="lazy" decoding="async" alt="Renforcement fonctionnel au poids du corps en extérieur, au bord de l'eau">
+            </picture>
             <span class="pillar__grade"></span>
           </div>
           <span class="pillar__num">03</span>
@@ -178,7 +194,10 @@
         </div>
         <div class="pillar reveal">
           <div class="pillar__media">
-            <img class="pillar__img pillar__img--recuperation" src="/images/recuperation.jpg" alt="Respiration et récupération au lever du soleil après la session">
+            <picture>
+              <source srcset="/images/recuperation.webp" type="image/webp">
+              <img class="pillar__img pillar__img--recuperation" src="/images/recuperation.jpg" width="1400" height="2100" loading="lazy" decoding="async" alt="Respiration et récupération au lever du soleil après la session">
+            </picture>
             <span class="pillar__grade"></span>
           </div>
           <span class="pillar__num">04</span>
@@ -193,7 +212,10 @@
   <section class="section luca" id="luca">
     <div class="container luca__grid">
       <div class="luca__media reveal reveal--left">
-        <img class="luca__img" src="/images/luca.jpg" alt="Luca Fasulo, préparateur physique et surfeur">
+        <picture>
+          <source srcset="/images/luca.webp" type="image/webp">
+          <img class="luca__img" src="/images/luca.jpg" width="900" height="1600" loading="lazy" decoding="async" alt="Luca Fasulo, préparateur physique et surfeur">
+        </picture>
         <span class="luca__grade"></span>
       </div>
       <div class="luca__text reveal reveal--right">
@@ -209,7 +231,10 @@
   <!-- RESSOURCE GRATUITE -->
   <section class="section programme" id="programme">
     <div class="programme__bg">
-      <img src="/images/sunset.jpg" alt="Coucher de soleil sur l'océan atlantique" loading="lazy">
+      <picture>
+        <source srcset="/images/sunset.webp" type="image/webp">
+        <img src="/images/sunset.jpg" width="1920" height="1071" alt="Coucher de soleil sur l'océan atlantique" loading="lazy" decoding="async">
+      </picture>
       <div class="programme__overlay"></div>
     </div>
     <div class="container programme__content reveal">
@@ -275,6 +300,6 @@
 </div>
 
 <script src="/js/consent.js" defer></script>
-<script src="/js/main.js"></script>
+<script src="/js/main.js" defer></script>
 </body>
 </html>

@@ -8,10 +8,13 @@ try {
 }
 
 const express = require('express');
+const compression = require('compression');
 const path = require('path');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+
+app.use(compression());
 
 // Force HTTPS in production (behind Hostinger's reverse proxy).
 // Detect the original protocol via the 'x-forwarded-proto' header set by the proxy.
