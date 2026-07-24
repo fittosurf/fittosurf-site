@@ -124,6 +124,10 @@ app.get('/a-propos', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'a-propos.html'));
 });
 
+app.get('/offres', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'offres.html'));
+});
+
 app.get('/blog/bras-lachent-rame-surf', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'blog', 'bras-lachent-rame-surf.html'));
 });

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Google Consent Mode v2 — tous les consentements REFUSÉS par défaut. -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    'analytics_storage': 'denied',
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied'
+  });
+</script>
+
+<title>Offres — FitToSurf</title>
+<meta name="description" content="Trois façons de préparer ton corps pour l'eau : avancer seul avec un cadre solide, être suivi de près, ou préparer un trip déjà réservé. Une offre pensée pour ta situation.">
+<link rel="canonical" href="https://fittosurf.fr/offres">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Offres — FitToSurf">
+<meta property="og:description" content="Trois façons de préparer ton corps pour l'eau : avancer seul avec un cadre solide, être suivi de près, ou préparer un trip déjà réservé.">
+<meta property="og:image" content="https://fittosurf.fr/images/Hero2.jpg">
+<meta property="og:url" content="https://fittosurf.fr/offres">
+<meta property="og:locale" content="fr_FR">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Offres — FitToSurf">
+<meta name="twitter:description" content="Trois façons de préparer ton corps pour l'eau : avancer seul avec un cadre solide, être suivi de près, ou préparer un trip déjà réservé.">
+<meta name="twitter:image" content="https://fittosurf.fr/images/Hero2.jpg">
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
+<link rel="icon" type="image/png" href="/images/favicon.png">
+<link rel="apple-touch-icon" href="/images/favicon.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700&family=Lato:wght@300;400;700;900&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet"></noscript>
+
+<link rel="stylesheet" href="/css/style.css">
+<style>
+  .offers { padding: 128px 0 96px; background: var(--off-white); }
+  .offers__head { max-width: 680px; margin: 0 auto 72px; padding: 0 24px; text-align: center; }
+  .offers__head .eyebrow { display: block; }
+  .offers__subtitle { font-family: var(--font-head); font-weight: 600; font-size: clamp(18px, 2.4vw, 22px); color: var(--wood); margin: 0 0 20px; }
+  .offers__intro { color: var(--ink-soft); font-size: 17px; line-height: 1.7; margin: 0; }
+
+  .offers__grid { max-width: var(--container); margin: 0 auto; padding: 0 24px; display: grid; grid-template-columns: 1fr; gap: 40px; align-items: stretch; }
+  @media (min-width: 768px) { .offers__grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1024px) { .offers__grid { grid-template-columns: repeat(3, 1fr); } }
+
+  .offer-card { display: flex; flex-direction: column; background: #fff; border: 1px solid rgba(139,111,71,.15); border-radius: 20px; padding: 36px 30px; transition: transform .4s var(--ease), box-shadow .4s var(--ease); }
+  .offer-card:hover { transform: translateY(-4px); box-shadow: 0 20px 44px rgba(43,39,34,.12); }
+  .offer-card--featured { border: 2px solid var(--ocean); background: linear-gradient(170deg, #fff 0%, rgba(30,107,140,.05) 100%); box-shadow: 0 16px 40px rgba(30,107,140,.14); }
+  @media (min-width: 1024px) { .offer-card--featured { transform: translateY(-12px); } .offer-card--featured:hover { transform: translateY(-16px); } }
+
+  .offer-card__eyebrow { font-size: 12px; letter-spacing: .18em; text-transform: uppercase; color: var(--wood); font-weight: 700; margin: 0 0 14px; }
+  .offer-card__title { font-family: var(--font-head); font-weight: 700; font-size: 24px; line-height: 1.25; color: var(--ink); margin: 0 0 14px; }
+  .offer-card__price { font-family: var(--font-head); font-weight: 700; font-size: 28px; color: var(--ocean); margin: 0 0 6px; }
+  .offer-card__price-note { font-size: 13px; color: var(--ink-soft); margin: 0 0 18px; }
+  .offer-card__hook { font-style: italic; color: var(--wood); font-size: 15px; font-weight: 700; margin: 0 0 14px; }
+  .offer-card__desc { color: var(--ink-soft); font-size: 15px; line-height: 1.7; margin: 0 0 22px; }
+
+  .offer-card__label { font-size: 12px; letter-spacing: .1em; text-transform: uppercase; color: var(--ink); font-weight: 700; margin: 0 0 12px; }
+  .offer-card__list { list-style: none; padding: 0; margin: 0 0 22px; display: flex; flex-direction: column; gap: 10px; }
+  .offer-card__list li { color: var(--ink-soft); font-size: 14.5px; line-height: 1.6; padding-left: 24px; position: relative; }
+  .offer-card__list li::before { content: "✓"; position: absolute; left: 0; top: 0; color: var(--ocean); font-weight: 700; }
+
+  .offer-card__note { background: rgba(139,111,71,.08); border-radius: 14px; padding: 16px 18px; font-size: 13.5px; color: var(--ink-soft); line-height: 1.6; margin: 0 0 22px; }
+  .offer-card__note strong { color: var(--ink); font-weight: 700; }
+
+  .offer-card__rarity { font-size: 13.5px; color: var(--ocean); font-weight: 700; line-height: 1.5; margin: 0 0 22px; padding: 14px 18px; background: rgba(30,107,140,.08); border-radius: 14px; }
+
+  .offer-card__quote { font-family: var(--font-head); font-style: italic; color: var(--wood); font-size: 16px; border-left: 3px solid var(--sand); padding-left: 16px; margin: 0 0 26px; }
+
+  .offer-card__cta { margin-top: auto; }
+  .offer-card__cta .btn { width: 100%; justify-content: center; }
+  .offer-card__cta-note { font-size: 12.5px; color: var(--ink-soft); text-align: center; margin: 12px 0 0; }
+
+  .offers__closing { max-width: 640px; margin: 88px auto 0; padding: 0 24px; text-align: center; }
+  .offers__closing p { font-family: var(--font-head); font-style: italic; color: var(--wood); font-size: clamp(20px, 3vw, 26px); line-height: 1.4; margin: 0; }
+</style>
+</head>
+<body>
+
+<header class="nav nav--solid" id="nav">
+  <div class="nav__inner">
+    <a href="/" class="nav__logo nav__logo--img">
+      <img class="nav-logo" src="/images/logo.png" width="400" height="400" decoding="async" alt="FitToSurf — préparation physique surf">
+    </a>
+    <nav class="nav__links">
+      <a href="/">Accueil</a>
+      <a href="/offres">Offres</a>
+      <a href="/#methode">La méthode</a>
+      <a href="/blog">Blog</a>
+      <a href="/#programme">Programme gratuit</a>
+    </nav>
+    <a href="/#programme" class="nav__cta">Programme gratuit</a>
+    <button class="nav__burger" id="navBurger" aria-label="Ouvrir le menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav__mobile" id="navMobile">
+    <a href="/">Accueil</a>
+    <a href="/offres">Offres</a>
+    <a href="/#pour-qui">Pour qui</a>
+    <a href="/#methode">La méthode</a>
+    <a href="/#luca">Luca</a>
+    <a href="/blog">Blog</a>
+    <a href="/#programme">Programme gratuit</a>
+  </div>
+</header>
+
+<main>
+  <section class="offers">
+    <div class="offers__head">
+      <p class="eyebrow eyebrow--center">Nos offres</p>
+      <h1 class="section__title" style="margin:0 auto 20px;text-align:center;">Ton offre coaching</h1>
+      <p class="offers__subtitle">Trois façons de préparer ton corps pour l'eau.</p>
+      <p class="offers__intro">Que tu veuilles avancer seul avec un cadre solide, être suivi de près, ou préparer un trip déjà réservé — il y a une offre pensée pour ta situation, pas dix options à comparer.</p>
+    </div>
+
+    <div class="offers__grid">
+
+      <!-- OFFRE 1 · AUTONOMIE -->
+      <article class="offer-card">
+        <p class="offer-card__eyebrow">Offre 1 · Autonomie</p>
+        <h2 class="offer-card__title">Le Pack Surf Physique Progression</h2>
+        <p class="offer-card__price">119 €</p>
+        <p class="offer-card__price-note">Paiement unique</p>
+        <p class="offer-card__hook">Pour l'autonomie.</p>
+        <p class="offer-card__desc">Le surfeur autonome et discipliné, qui a fait la semaine offerte, a senti la différence, et veut la suite sans avoir besoin qu'on le tienne par la main.</p>
+
+        <p class="offer-card__label">Ce que ça contient</p>
+        <ul class="offer-card__list">
+          <li>12 semaines en 3 blocs de 4 (Fondations, Développement, Spécifique surf)</li>
+          <li>3 à 4 séances par semaine (30-40 min), détaillées (exercices, séries, charges, tempo)</li>
+          <li>Une application dédiée pour recevoir tes entraînements et tes vidéos, déblocage automatique par bloc</li>
+          <li>Protocole de récupération post-session + tableau de suivi de progression</li>
+          <li>Deux variantes avec/sans matériel</li>
+        </ul>
+
+        <p class="offer-card__note"><strong>Ce qui n'est pas inclus :</strong> pas de bilan personnalisé, pas de visio, pas de correction vidéo individuelle — juste un espace d'échange pour des questions techniques ponctuelles.</p>
+
+        <p class="offer-card__quote">« Tu n'as pas besoin qu'on te tienne la main, tu as besoin d'un cadre. »</p>
+
+        <div class="offer-card__cta">
+          <a href="https://calendly.com/fittosurf/20min" class="btn btn--primary" target="_blank" rel="noopener noreferrer">
+            <span>Réserver mon appel découverte</span>
+            <span class="btn__icon">↓</span>
+          </a>
+          <p class="offer-card__cta-note">20 min pour qu'on détermine ensemble la formule la plus adaptée à ta situation.</p>
+        </div>
+      </article>
+
+      <!-- OFFRE 2 · 1-TO-1 -->
+      <article class="offer-card offer-card--featured">
+        <p class="offer-card__eyebrow">Offre 2 · 1-to-1</p>
+        <h2 class="offer-card__title">Le Suivi 1-1 Prépa Surf</h2>
+        <p class="offer-card__price">149 €/mois <span style="font-size:16px;color:var(--ink-soft);font-weight:400;">sans engagement</span></p>
+        <p class="offer-card__price-note">ou 129 €/mois (engagement 3 mois)</p>
+        <p class="offer-card__hook">Ton cœur de métier.</p>
+        <p class="offer-card__desc">Celui qui a un objectif daté (une saison, un retour de blessure), ou qui sait qu'il ne tiendra pas seul. Un accompagnement individuel, ajusté chaque semaine.</p>
+
+        <p class="offer-card__label">Ce que ça contient</p>
+        <ul class="offer-card__list">
+          <li>Bilan initial approfondi (45-60 min) + séance test</li>
+          <li>Programme 100 % personnalisé livré sous 72h</li>
+          <li>Réajustement hebdomadaire</li>
+          <li>Bilan mensuel en visio + analyse vidéo si besoin</li>
+          <li>Échanges directs via l'application dédiée, réponse sous 24h ouvrées</li>
+        </ul>
+
+        <p class="offer-card__rarity">12 à 15 clients suivis en simultané maximum, pour garantir un vrai accompagnement personnalisé.</p>
+
+        <p class="offer-card__quote">« Un mois, c'est un essai. Trois mois, c'est un changement. »</p>
+
+        <div class="offer-card__cta">
+          <a href="https://calendly.com/fittosurf/20min" class="btn btn--primary" target="_blank" rel="noopener noreferrer">
+            <span>Réserver mon appel découverte</span>
+            <span class="btn__icon">↓</span>
+          </a>
+          <p class="offer-card__cta-note">20 min pour qu'on détermine ensemble la formule la plus adaptée à ta situation.</p>
+        </div>
+      </article>
+
+      <!-- OFFRE 3 · SAISONNIER -->
+      <article class="offer-card">
+        <p class="offer-card__eyebrow">Offre 3 · Saisonnier</p>
+        <h2 class="offer-card__title">Le Pack Surf Trip</h2>
+        <p class="offer-card__price">299 €</p>
+        <p class="offer-card__price-note">6 semaines</p>
+        <p class="offer-card__hook">Protège ton investissement.</p>
+        <p class="offer-card__desc">Celui qui a déjà un vol réservé — Bali, Portugal, Canaries — et veut encaisser 5 à 10 jours de surf quotidien sans finir cassé au troisième jour.</p>
+
+        <p class="offer-card__label">Ce que ça contient</p>
+        <ul class="offer-card__list">
+          <li>Bilan léger (15-20 min)</li>
+          <li>Plan intensif en 3 temps (rattraper S1-2, monter en capacité S3-4, affûtage S5-6)</li>
+          <li>Un call toutes les deux semaines (3 au total) + WhatsApp et le chat de l'application dédiée pendant le trip si besoin</li>
+          <li>Fiche « échauffement de bord de plage » livrée en dernière semaine</li>
+          <li>Stratégie nutrition/hydratation avant-pendant-après incluse</li>
+        </ul>
+
+        <p class="offer-card__note">Vendu 6 à 8 semaines avant le départ.</p>
+
+        <p class="offer-card__quote">« T'as déjà posé de l'argent sur ce trip. On protège cet investissement. »</p>
+
+        <div class="offer-card__cta">
+          <a href="https://calendly.com/fittosurf/20min" class="btn btn--primary" target="_blank" rel="noopener noreferrer">
+            <span>Réserver mon appel découverte</span>
+            <span class="btn__icon">↓</span>
+          </a>
+          <p class="offer-card__cta-note">20 min pour qu'on détermine ensemble la formule la plus adaptée à ta situation.</p>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="offers__closing">
+      <p>« Prépare ton corps pour que rien ne te limite dans l'eau. »</p>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__brand">
+      <a href="/" class="nav__logo">FitToSurf</a>
+      <p>Préparation physique surf pour adultes — Seignosse, Landes</p>
+    </div>
+    <nav class="footer__links">
+      <a href="/">Accueil</a>
+      <a href="/offres">Offres</a>
+      <a href="/#methode">La méthode</a>
+      <a href="/blog">Blog</a>
+      <a href="/#programme">Programme gratuit</a>
+      <a href="/mentions-legales">Mentions légales</a>
+      <a href="/cgv">CGV</a>
+      <button type="button" class="footer__link-btn" id="manageCookies">Gérer les cookies</button>
+      <a href="https://instagram.com/fittosurf.fr" class="footer__social" target="_blank" rel="noopener noreferrer" aria-label="FitToSurf sur Instagram" title="FitToSurf sur Instagram">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <rect x="2" y="2" width="20" height="20" rx="5.5"></rect>
+          <circle cx="12" cy="12" r="4.2"></circle>
+          <circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"></circle>
+        </svg>
+      </a>
+    </nav>
+  </div>
+  <div class="container footer__bottom">
+    <p>© 2026 FitToSurf — Luca Fasulo, préparateur physique — 40230 Tosse</p>
+  </div>
+</footer>
+
+<!-- Bannière de consentement cookies (RGPD / CNIL) -->
+<div class="consent" id="consentBanner" role="dialog" aria-live="polite" aria-label="Consentement aux cookies de mesure d'audience" hidden>
+  <div class="consent__inner">
+    <p class="consent__text">
+      Cookies de mesure d'audience. Tu peux refuser, ça ne change rien.
+      <a href="/mentions-legales" class="consent__more">En savoir plus</a>
+    </p>
+    <div class="consent__actions">
+      <button type="button" class="consent__btn consent__btn--refuse" id="consentRefuse">Refuser</button>
+      <button type="button" class="consent__btn consent__btn--accept" id="consentAccept">Accepter</button>
+    </div>
+  </div>
+</div>
+
+<script src="/js/consent.js" defer></script>
+<script src="/js/main.js" defer></script>
+</body>
+</html>
