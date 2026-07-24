@@ -116,6 +116,10 @@ app.get('/mentions-legales', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'mentions-legales.html'));
 });
 
+app.get('/cgv', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'cgv.html'));
+});
+
 app.get('/a-propos', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'a-propos.html'));
 });
